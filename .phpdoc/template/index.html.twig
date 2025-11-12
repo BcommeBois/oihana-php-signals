@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="phpdocumentor-section">
+
+<a href="https://github.com/BcommeBois/oihana-php-signals" class="phpdocumentor-title__link">
+    <img src="assets/images/oihana-php-signals-logo-inline-512x160.png" alt="Oihana PHP Signals" style="width: 256px; height: 80px;"/>
+</a>
+
+<br/>
+
+<h2>oihana-php-signals</h2>
+<p>A fast and flexible signal/slot implementation for event-driven programming.</p>
+
+<h3>📚 Documentation</h3>
+<p>Full project documentation is available at:</p>
+<p>
+    <a href="https://bcommebois.github.io/oihana-php-signals" target="_blank">https://bcommebois.github.io/oihana-php-signals</a>
+</p>
+
+<h3>🔗 Project on GitHub</h3>
+<p>View the full source code and contribute on GitHub:</p>
+<p>
+    <a href="https://github.com/BcommeBois/oihana-php-signals" target="_blank">
+        https://github.com/BcommeBois/oihana-php-signals
+    </a>
+</p>
+
+<h3>📦 Installation</h3>
+<p>Requires <a href="https://php.net/releases/" target="_blank">PHP 8.4+</a>. Install via <a href="https://getcomposer.org/" target="_blank">Composer</a>:</p>
+<pre class="language-bash prettyprint">composer require oihana/php-signals</pre>
+
+<h3>✨ Features</h3>
+<ul>
+    <li>Priority-based receiver execution (higher priority executes first)</li>
+    <li>Auto-disconnect for one-time listeners</li>
+    <li>Type-safe receiver management</li>
+    <li>Efficient sorting and execution order</li>
+    <li>Supports both object receivers implementing <code>Receiver</code> and PHP callables</li>
+</ul>
+
+<h3>🚀 Quick start</h3>
+<pre class="language-php prettyprint">use oihana\signals\Signal;
+use oihana\signals\Receiver;
+
+// Define a Receiver class
+class NotificationHandler implements Receiver
+{
+    public function receive( mixed ...$values ) :void
+    {
+        echo 'Notification: ' . implode(', ', $values) . PHP_EOL;
+    }
+}
+
+// Create receivers
+$logger = function( mixed ...$values )
+{
+     echo 'Log: ' . implode(', ', $values) . PHP_EOL;
+};
+
+$handler = new NotificationHandler();
+
+// Setup signal
+$signal = new Signal();
+
+// Connect with different priorities
+$signal->connect( $logger  , priority: 10 ); // Executes first
+$signal->connect( $handler , priority: 5 ); // Executes second
+
+// Emit values to all connected receivers
+$signal->emit( 'User logged in', 'user123' );
+
+// One-time listener
+$signal->connect(
+    fn() => echo 'First emit only!' . PHP_EOL,
+    autoDisconnect: true
+);
+</pre>
+
+<h3>🧰 Usage</h3>
+<p>Advanced usage with priority and auto-disconnect:</p>
+<pre class="language-php prettyprint">$signal = new Signal();
+
+// High priority handler (executes first)
+$signal->connect(
+    fn($msg) => echo "URGENT: $msg" . PHP_EOL,
+    priority: 100
+);
+
+// One-time handler (disconnects after first emit)
+$signal->connect(
+    fn($msg) => echo "Initialization: $msg" . PHP_EOL,
+    priority: 50,
+    autoDisconnect: true
+);
+
+// Normal priority handler
+$signal->connect(
+     fn($msg) => echo "Info: $msg" . PHP_EOL
+);
+
+// First emit - all three handlers execute
+$signal->emit('System started');
+
+// Second emit - only two handlers execute (auto-disconnect removed one)
+$signal->emit('Processing data');
+</pre>
+
+<p><strong>Note:</strong> WeakReferences are used for object receivers to allow proper garbage collection without preventing objects from being destroyed.</p>
+
+<h3>✅ Running Unit Tests</h3>
+<p>Run all unit tests:</p>
+<pre class="language-bash prettyprint">composer test</pre>
+
+<p>Run a specific test file:</p>
+<pre class="language-bash prettyprint">composer test tests/oihana/signals/SignalTest.php</pre>
+
+<h3>📄 License</h3>
+<p>This project is licensed under the <strong><a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">Mozilla Public License 2.0 (MPL-2.0)</a></strong>.</p>
+
+<h3>👤 About the author</h3>
+<ul>
+    <li><strong>Author:</strong> Marc ALCARAZ (aka <em>eKameleon</em>)</li>
+    <li><strong>Website:</strong> <a href="http://www.ooop.fr" target="_blank">www.ooop.fr</a></li>
+    <li><strong>Email:</strong> <a href="mailto:marc@ooop.fr">marc@ooop.fr</a></li>
+</ul>
+
+{% set node = project.namespace %}
+
+{{ include('components/table-of-contents.html.twig', {
+    'node': project.namespace,
+    'namespaces': usesNamespaces or not usesPackages ? node.children : [],
+    'packages': usesPackages ? project.package.children : []
+}) }}
+
+{{ include('components/constants.html.twig', {'node': project.namespace}) }}
+{{ include('components/functions.html.twig', {'node': project.namespace}) }}
+
+</section>
+{% endblock %}
