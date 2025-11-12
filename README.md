@@ -140,9 +140,11 @@ You can find the issues page here: [https://github.com/BcommeBois/oihana-php-cor
 See `CHANGELOG.md` for notable changes.
 
 ## License
+
 This project is licensed under the [Mozilla Public License 2.0 (MPL-2.0)](https://www.mozilla.org/en-US/MPL/2.0/).
 
 ## 👤 About the author
+
 - Author : Marc ALCARAZ (aka eKameleon)
 - Mail : [marc@ooop.fr](mailto:marc@ooop.fr)
 - Website : http://www.ooop.fr
@@ -152,6 +154,6 @@ This project is licensed under the [Mozilla Public License 2.0 (MPL-2.0)](https:
 We use [phpDocumentor](https://phpdoc.org/) to generate the documentation into the `./docs` folder.
 
 ## 🔗 Related packages
-- 
+
 - `oihana/php-core` – core helpers and utilities used by this library: `https://github.com/BcommeBois/oihana-php-core`
 - `oihana/php-reflect` – reflection and hydration utilities: `https://github.com/BcommeBois/oihana-php-reflect`
