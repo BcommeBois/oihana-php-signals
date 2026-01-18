@@ -18,7 +18,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\oihana\\signals\\Notice\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "Returns\u0020the\u0020array\u0020representation\u0020of\u0020the\u0020notice\u0020object.",
+            "summary": "Generates\u0020an\u0020associative\u0020array\u0020from\u0020the\u0020public\u0020properties\u0020of\u0020a\u0020given\u0020class\u0020or\u0020object.",
             "url": "classes/oihana-signals-Notice.html#method_toArray"
         },                {
             "fqsen": "\\oihana\\signals\\Notice\u003A\u003A\u0024context",

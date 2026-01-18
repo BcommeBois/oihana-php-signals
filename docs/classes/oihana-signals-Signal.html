@@ -252,10 +252,8 @@ $signal-&gt;emit('Processing data');
                                     </dd>
                                             </dl>
 
-
-
-
-
+    
+    
 <h3 id="toc">
     Table of Contents
     <a href="classes/oihana-signals-Signal.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -415,9 +413,8 @@ $signal-&gt;emit('Processing data');
     
     
 
-    
-
-</article>
+        
+    </article>
             </section>
 
         
@@ -484,9 +481,8 @@ echo $signal-&gt;length; // 1
                                     </dd>
                                             </dl>
 
-    
-
-        <h5>Hooks</h5>
+        
+            <h5>Hooks</h5>
             <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__type">int</span>
@@ -498,9 +494,8 @@ echo $signal-&gt;length; // 1
 
 
 
-
-
-
+    
+    
 
 
     
@@ -540,9 +535,8 @@ echo $signal-&gt;length; // 1
     
     
 
-    
-
-    
+        
+        
 
 </article>
                     <article
@@ -582,9 +576,8 @@ its priority, and auto-disconnect flag.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
             </section>
@@ -617,7 +610,7 @@ its priority, and auto-disconnect flag.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receivers</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$throwable</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receivers</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$throwable</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -626,9 +619,9 @@ its priority, and auto-disconnect flag.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$receivers</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&gt;|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$receivers</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&gt;|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Optional array of initial receivers to connect.
 Each receiver will be connected with default priority (0).</p>
@@ -636,9 +629,9 @@ Each receiver will be connected with default priority (0).</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$throwable</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$throwable</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Indicates if the signal should throw exceptions when a receiver fails (default <code class="prettyprint">true</code>).</p>
 </section>
@@ -672,8 +665,8 @@ $signal = new Signal([
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -698,7 +691,7 @@ $signal = new Signal([
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">connect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priority</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$autoDisconnect</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">connect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priority</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$autoDisconnect</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -710,8 +703,8 @@ receivers are ignored.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$receiver</span>
-                : <span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a></span>
+                <span class="phpdocumentor-argument-list__argument__name">$receiver</span>
+                : <span class="phpdocumentor-argument-list__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The receiver to connect.</p>
@@ -719,18 +712,18 @@ receivers are ignored.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priority</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$priority</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">0</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Execution priority (higher values execute first). Default: 0</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$autoDisconnect</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$autoDisconnect</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Auto-disconnect after first execution. Default: false</p>
 </section>
@@ -774,8 +767,8 @@ $signal-&gt;connect( $handler ); // false (already connected)
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
@@ -844,8 +837,8 @@ if ( $signal-&gt;connected() ) {
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
@@ -878,7 +871,7 @@ if ( $signal-&gt;connected() ) {
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">disconnect</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">disconnect</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -887,9 +880,9 @@ if ( $signal-&gt;connected() ) {
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$receiver</span>
-                : <span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$receiver</span>
+                : <span class="phpdocumentor-argument-list__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The receiver to disconnect.
 Null disconnects all.</p>
@@ -930,8 +923,8 @@ $signal-&gt;disconnect(); // false (no receivers to disconnect)
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
@@ -964,7 +957,7 @@ $signal-&gt;disconnect(); // false (no receivers to disconnect)
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">emit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">emit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -976,8 +969,8 @@ with autoDisconnect are automatically removed after being called.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-argument-list__argument__name">$values</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Zero or more values to pass to each receiver.</p>
@@ -1036,8 +1029,8 @@ $signal-&gt;emit(); // Doesn't print (already disconnected)
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -1062,7 +1055,7 @@ $signal-&gt;emit(); // Doesn't print (already disconnected)
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">hasReceiver</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">hasReceiver</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$receiver</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1071,8 +1064,8 @@ $signal-&gt;emit(); // Doesn't print (already disconnected)
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$receiver</span>
-                : <span class="phpdocumentor-signature__argument__return-type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a></span>
+                <span class="phpdocumentor-argument-list__argument__name">$receiver</span>
+                : <span class="phpdocumentor-argument-list__argument__type">callable|<a href="classes/oihana-signals-Receiver.html"><abbr title="\oihana\signals\Receiver">Receiver</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The receiver to check.</p>
@@ -1109,8 +1102,8 @@ echo $signal-&gt;hasReceiver( $handler ); // false
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1182,8 +1175,8 @@ echo count($receivers); // 2
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, callable&gt;</span>
