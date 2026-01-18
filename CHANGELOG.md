@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 ### Fixed
 - 
 
+## [1.0.1] - 2025-11-12
+
+Fix the toArray method in the Notice class with the last oihana-php-reflect version.
+
 ---
 
 ## [1.0.0] - 2025-11-12
@@ -32,5 +36,3 @@ Initial stable release.
 - Documentation skeleton and phpDocumentor template for API docs.
 - PHPUnit test suite and Composer scripts.
 
-[Unreleased]: https://github.com/BcommeBois/oihana-php-signals/compare/1.0.0...HEAD
-[1.0.0]: https://github.com/BcommeBois/oihana-php-signals/releases/tag/1.0.0
