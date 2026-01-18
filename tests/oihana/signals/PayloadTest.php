@@ -54,8 +54,8 @@ final class PayloadTest extends TestCase
 
         $this->assertSame
         ([
-            'data'    => $data ,
             'context' => ['foo' => 'bar'] ,
+            'data'    => $data ,
             'target'  => $target ,
             'type'    => 'afterDelete' ,
         ]
