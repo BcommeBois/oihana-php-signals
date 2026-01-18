@@ -2,7 +2,6 @@
 
 namespace oihana\signals;
 
-use oihana\core\options\PrepareOption;
 use ReflectionException;
 use JsonSerializable;
 
@@ -57,10 +56,7 @@ class Notice implements JsonSerializable
         $this->type    = $type    ;
     }
 
-    use ReflectionTrait
-    {
-        toArray as traitToArray ; // renommer la méthode du trait
-    }
+    use ReflectionTrait ;
 
     /**
      * The context of the notice
@@ -90,23 +86,5 @@ class Notice implements JsonSerializable
     public function jsonSerialize() : array
     {
         return $this->toArray() ;
-    }
-
-    /**
-     * Generates an associative array from the public properties of a given class or object.
-     *
-     * @param null|object|string $class The object instance or fully-qualified class name.
-     * @param array|null $options Optional configuration.
-     *
-     * @return array The resulting associative array of properties.
-     *
-     * @throws ReflectionException
-     */
-    public function toArray( null|object|string $class = null , ?array $options = [] ): array
-    {
-        $class ??= $this ;
-        $options = [PrepareOption::REDUCE => true, ...($options ?? [])];
-
-        return $this->traitToArray( $class , [ PrepareOption::REDUCE => true , ...$options ] ) ;
     }
 }
