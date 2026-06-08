@@ -2,6 +2,9 @@
 
 namespace tests\oihana\signals;
 
+use RuntimeException;
+use stdClass;
+
 use oihana\signals\Signal;
 use oihana\signals\Receiver;
 use PHPUnit\Framework\TestCase;
@@ -189,5 +192,93 @@ final class SignalTest extends TestCase
 
         $signal->connect(fn() => null);
         $this->assertTrue($signal->connected());
+    }
+
+    public function testConstructorConnectsInitialReceivers(): void
+    {
+        $signal = new Signal([ fn() => 'A' , fn() => 'B' ]);
+
+        $this->assertEquals(2, $signal->length);
+    }
+
+    public function testConnectRejectsNonCallableNonReceiver(): void
+    {
+        $signal = new Signal();
+
+        // Neither callable nor a Receiver -> connect is a no-op returning false.
+        $this->assertFalse($signal->connect(new stdClass()));
+        $this->assertEquals(0, $signal->length);
+    }
+
+    public function testDisconnectReturnsFalseWhenTargetNotFound(): void
+    {
+        $signal   = new Signal();
+        $handler1 = fn() => 'A';
+        $handler2 = fn() => 'B';
+
+        $signal->connect($handler1);
+
+        // The list is non-empty but the target is not connected.
+        $this->assertFalse($signal->disconnect($handler2));
+        $this->assertEquals(1, $signal->length);
+    }
+
+    public function testToArrayReturnsEmptyArrayWhenNoReceivers(): void
+    {
+        $this->assertSame([], (new Signal())->toArray());
+    }
+
+    public function testEmitPrunesGarbageCollectedObjectReceiver(): void
+    {
+        $signal = new Signal();
+
+        $obj = new class
+        {
+            public function handle(): void {}
+        };
+
+        $signal->connect([ $obj , 'handle' ]);
+        $this->assertEquals(1, $signal->length);
+
+        // Drop the only strong reference, then force collection.
+        $obj = null;
+        gc_collect_cycles();
+
+        // Emit notices the dead WeakReference and prunes the entry.
+        $signal->emit();
+        $this->assertEquals(0, $signal->length);
+    }
+
+    public function testEmitRethrowsWhenThrowableIsTrue(): void
+    {
+        $signal = new Signal(); // throwable defaults to true
+
+        $signal->connect(function (): void
+        {
+            throw new RuntimeException('boom');
+        });
+
+        $this->expectException(RuntimeException::class);
+        $signal->emit();
+    }
+
+    public function testEmitSwallowsExceptionWhenThrowableIsFalse(): void
+    {
+        $signal = new Signal(throwable: false);
+        $reached = false;
+
+        $signal->connect(function (): void
+        {
+            throw new RuntimeException('boom');
+        });
+        $signal->connect(function () use (&$reached): void
+        {
+            $reached = true;
+        });
+
+        $signal->emit(); // must not throw
+
+        // Execution continued to the next receiver despite the swallowed throw.
+        $this->assertTrue($reached);
     }
 }
