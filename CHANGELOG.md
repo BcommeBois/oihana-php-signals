@@ -9,9 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 ### Added
 - Code coverage tooling: a Clover-to-Markdown report generator (`tools/clover-to-markdown.php`), Composer scripts and CI integration.
 - A `Classes` row in the Markdown coverage summary, derived from the per-class metrics to match PHPUnit's `--coverage-text` figure.
+- A GitHub Actions workflow (`.github/workflows/docs.yml`) that builds the phpDocumentor API documentation and deploys it to GitHub Pages on every push to `main`.
 
 ### Changed
 - Raised the test coverage of `Signal` and `SignalEntry` to 100%.
+- The generated `docs/` directory is no longer versioned; it is now built and published automatically by the Pages workflow.
 
 ## [1.0.2] - 2026-01-18
 
